@@ -4,6 +4,7 @@ public class menu {
 
     public void menu1(){
         library library1 = new library();
+        Book Book1 = new Book();
         int choice;
         do {
 
@@ -27,7 +28,7 @@ public class menu {
                     library1.afficher();
                     break;
                 case 4 :
-                    library1.search();
+                    Book1.modifier();
                     break;
                 case 5 :
                     library1.suppremir();
