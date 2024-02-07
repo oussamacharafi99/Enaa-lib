@@ -8,13 +8,15 @@ public class menu {
         int choice;
         do {
 
-            System.out.println("----- menu -----\n");
-            System.out.println("1 - ajouter un liver !\n");
-            System.out.println("2 - ajouter un student !\n");
-            System.out.println("3 - afficher les livres !\n");
-            System.out.println("4 - Modifier un livre\n");
-            System.out.println("5 - suppremir un livre\n");
-            System.out.println("entrer ton choix !");
+            System.out.println("----- menu -----");
+            System.out.println("1 - Add a Book!");
+            System.out.println("2 - Add a student !");
+            System.out.println("3 - Show the Books!");
+            System.out.println("4 - Editing on book information !");
+            System.out.println("5 - Remove a Book !");
+            System.out.println("6 - Search for the book !");
+            System.out.println("7 - Exit the application ! ");
+            System.out.println("----- > Enter your choice !");
 
             choice = new Scanner(System.in).nextInt();
             switch (choice){
@@ -33,7 +35,12 @@ public class menu {
                 case 5 :
                     library1.suppremir();
                     break;
+                case 6 :
+                    // pour la fonction rechercher;
+                case 7 :
+                    System.out.println("The program has been closed");
                 default:
+                    System.out.println("Please Enter number from the top list !");
                     break;
             }
         }while (choice != 7);
