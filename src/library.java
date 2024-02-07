@@ -71,7 +71,7 @@ public class library {
         System.out.println("i'm modifier !\n");
     }
     public void suppremir(){
-//        System.out.println("i'm suppremir !\n");
+//        System.out.println("i'm suppremir  !\n");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the Id book !");
         int sear = scanner.nextInt();
