@@ -7,17 +7,16 @@ public class Book {
     public String author;
     public int Years_book;
 
-    public void modifier(){
-        library lib = new library();
+    public void Modifier(){
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("dkhel");
-        String sear = scanner.nextLine();
-        for (int i = 0; i < lib.Book_list.size(); i++){
-            if (sear.equals(lib.Book_list.get(i).name_book)){
-                ;
-            };
-        };
-
+        System.out.print("Entrer new titre: ");
+        this.name_book = scanner.nextLine();
+        System.out.print("Entrer new auteur: ");
+        this.author = scanner.nextLine();
+        System.out.print("Entrer new date de publication: ");
+        this.Years_book = scanner.nextInt();
+        System.out.println("modifier avec succes");
     }
-
 }
+

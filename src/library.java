@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class library {
     ArrayList<Book> Book_list = new ArrayList<>();
-    ArrayList<student> student_list = new ArrayList<>();
+    ArrayList<Student> student_list = new ArrayList<>();
     int i = 0;
+    Book newBook = new Book();
     public void addBook() {
         Scanner scanner = new Scanner(System.in);
-         Book newBook = new Book();
         newBook.Id_book = i;
 
         System.out.println("Enter the name of the book:");
@@ -38,7 +38,7 @@ public class library {
     public void addStudent(){
 
         Scanner scanner = new Scanner(System.in);
-        student newStudent = new student();
+        Student newStudent = new Student();
 
         System.out.println("Enter the ID of the student :");
         newStudent.num_card = scanner.nextLine();
@@ -54,12 +54,12 @@ public class library {
 
         System.out.println("Student added successfully!");
     }
-    public void afficher(){
+    public void showBook(){
 //        System.out.println("i'm afficher !\n");
         for (Book book : Book_list) {
             System.out.print("ID Book : ");
             System.out.println(book.Id_book + 1);
-            System.out.println("Book name :  " + book.name_book);
+            System.out.println("Book name :  " + book.name_book );
             System.out.println("Book description :  " + book.des_book);
             System.out.println("the author name is :" + book.author);
             System.out.println("Book Years :  " + book.Years_book);
@@ -67,22 +67,57 @@ public class library {
         }
 
     }
-    public void search(){
-        System.out.println("i'm modifier !\n");
+    public void showStudent(){
+        for (Student student : student_list) {
+            System.out.println("-----------------------");
+            System.out.print("ID Book : " + student.num_card + "\n");
+            System.out.println("Book name :  " + student.full_name);
+            System.out.println("Book description :  " + student.adr_name);
+            System.out.println("-----------------------");
+        }
     }
-    public void suppremir(){
+    public void remoove(){
 //        System.out.println("i'm suppremir  !\n");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the Id book !");
         int sear = scanner.nextInt();
+        boolean found = false;
 
         for ( int i = 0; i < Book_list.size(); i++) {
             if (sear - 1 == Book_list.get(i).Id_book){
+                found = true;
                 Book_list.remove(i);
                 System.out.println("this Book is removed !");
             }
         }
+        if (!found){
+            System.out.println("The Book Id : " + sear + " unavailable !");
+        }
 
+    }
+    public void search() {
+       if (Book_list.isEmpty()){
+           System.out.println("Enaa-lib is vide !");
+       }
+
+       else {
+           Scanner scanne = new Scanner(System.in);
+
+           System.out.print("Enter Name Book For searching !: ");
+           String NAME = scanne.nextLine();
+           for (Book book : Book_list) {
+               if (book.name_book.equalsIgnoreCase(NAME)) {
+                   System.out.print("ID Book : ");
+                   System.out.println(book.Id_book + 1);
+                   System.out.println("Book name :  " + book.name_book);
+                   System.out.println("Book description :  " + book.des_book);
+                   System.out.println("the author name is :" + book.author);
+                   System.out.println("Book Years :  " + book.Years_book);
+                   System.out.println("-----------------------");
+               }
+           }
+
+       }
     }
 
 }
