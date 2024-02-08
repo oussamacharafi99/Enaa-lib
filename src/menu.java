@@ -36,14 +36,14 @@ public class menu {
                 case 5 :
                     //Book1.modifier();
                     if (library1.Book_list.isEmpty()) {
-                        System.out.println("la bibliotheque est vide");
+                        System.out.println("Enaa-li is vide Now Please Add the books from menu !");
                     } else {
                         Scanner scanne = new Scanner(System.in);
-                        System.out.print("Entrer le titre de livre à modifier: ");
+                        System.out.print("Enter the Name Of the Book !");
                         String title = scanne.nextLine();
                         boolean found = false;
 
-                        for (Boo ok book : library1.Book_list) {
+                        for (Book book : library1.Book_list) {
                             if (book.name_book.equalsIgnoreCase(title)) {
                                 book.Modifier();
                                 found = true;

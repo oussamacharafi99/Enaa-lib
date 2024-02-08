@@ -10,12 +10,18 @@ public class Book {
     public void Modifier(){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Entrer new titre: ");
+        System.out.print("Enter The new Name of the Book ! :");
         this.name_book = scanner.nextLine();
-        System.out.print("Entrer new auteur: ");
+
+        System.out.print("Enter The new Description of the Book ! :");
+        this.des_book = scanner.nextLine();
+
+        System.out.print("Enter The new Name Of The  author ! :");
         this.author = scanner.nextLine();
-        System.out.print("Entrer new date de publication: ");
+
+        System.out.print("Enter The new date of the Book ! :  ");
         this.Years_book = scanner.nextInt();
+
         System.out.println("modifier avec succes");
     }
 }
