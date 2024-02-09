@@ -7,7 +7,10 @@ public class Book {
     public String author;
     public int Years_book;
 
-    public void Modifier(){
+
+    public Student student;
+
+    public void ModifierBook(){
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter The new Name of the Book ! :");

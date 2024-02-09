@@ -5,9 +5,9 @@ public class library {
     ArrayList<Book> Book_list = new ArrayList<>();
     ArrayList<Student> student_list = new ArrayList<>();
     int i = 0;
-    Book newBook = new Book();
+    Scanner scanner = new Scanner(System.in);
     public void addBook() {
-        Scanner scanner = new Scanner(System.in);
+        Book newBook = new Book();
         newBook.Id_book = i;
 
         System.out.println("Enter the name of the book:");
@@ -55,7 +55,6 @@ public class library {
         System.out.println("Student added successfully!");
     }
     public void showBook(){
-//        System.out.println("i'm afficher !\n");
         for (Book book : Book_list) {
             System.out.print("ID Book : ");
             System.out.println(book.Id_book + 1);
@@ -67,12 +66,45 @@ public class library {
         }
 
     }
+    public void reserve(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name Book ! :");
+        String nameBook = scanner.nextLine();
+
+         for (Book book : Book_list){
+
+             if (book.name_book.equalsIgnoreCase(nameBook)){
+
+                     System.out.println("Enter the Id Of student !  : ");
+                     String idStudent = scanner.nextLine();
+
+                     for (Student student : student_list){
+                         if (student.num_card.equalsIgnoreCase(idStudent)){
+                                book.student = student;
+                                student.books.add(book);
+
+                               System.out.println(" wa hasan --------");
+                         }
+                     }
+                 break;
+             }
+
+         }
+
+    }
     public void showStudent(){
         for (Student student : student_list) {
             System.out.println("-----------------------");
             System.out.print("ID Book : " + student.num_card + "\n");
             System.out.println("Book name :  " + student.full_name);
             System.out.println("Book description :  " + student.adr_name);
+
+            if (student.books.isEmpty()){
+                System.out.println("He did not to reserve any book !");
+            }
+            else {
+                student.books.forEach( book -> System.out.println("The book name " + book.name_book));
+            }
             System.out.println("-----------------------");
         }
     }
@@ -101,10 +133,9 @@ public class library {
        }
 
        else {
-           Scanner scanne = new Scanner(System.in);
 
            System.out.print("Enter Name Book For searching !: ");
-           String NAME = scanne.nextLine();
+           String NAME = scanner.nextLine();
            for (Book book : Book_list) {
                if (book.name_book.equalsIgnoreCase(NAME)) {
                    System.out.print("ID Book : ");
@@ -119,5 +150,6 @@ public class library {
 
        }
     }
+
 
 }
