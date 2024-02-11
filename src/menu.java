@@ -18,7 +18,10 @@ public class menu {
             System.out.println("7 - Remove a Book !");
             System.out.println("8 - Search for the book !");
             System.out.println("9 - reserve a Book  !");
+<<<<<<< HEAD
             System.out.println("10 - Remove The Reservation  !");
+=======
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
             System.out.println("0 - Exit the application ! ");
             System.out.println("----- > Enter your choice !");
 
@@ -88,9 +91,12 @@ public class menu {
                 case 9:
                     library1.reserve();
                     break;
+<<<<<<< HEAD
                 case 10 :
                     library1.cancelReservation();
                     break;
+=======
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
                 case 0 :
                     System.out.println("The program has been closed");
                     break;

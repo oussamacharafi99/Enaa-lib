@@ -8,19 +8,29 @@ public class library {
     Scanner scanner = new Scanner(System.in);
     public void addBook() {
         Book newBook = new Book();
+<<<<<<< HEAD
         Scanner scanner = new Scanner(System.in);
+=======
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
         newBook.Id_book = i;
 
         System.out.println("Enter the name of the book:");
         newBook.name_book = scanner.nextLine();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
         for (Book book : Book_list) {
             while (newBook.name_book.equals(book.name_book)) {
                 System.out.println("Enter the name of the book:");
                 newBook.name_book = scanner.nextLine();
+<<<<<<< HEAD
 
             }
             break;
+=======
+            }
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
         }
         System.out.println("Enter the description of the book:");
         newBook.des_book = scanner.nextLine();
@@ -70,6 +80,7 @@ public class library {
         }
 
     }
+<<<<<<< HEAD
     public void reserve() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name of the Book: ");
@@ -142,6 +153,40 @@ public class library {
             System.out.print("ID Student : " + student.num_card + "\n");
             System.out.println("Student Full NAme name :  " + student.full_name);
             System.out.println("Student Address :  " + student.adr_name);
+=======
+    public void reserve(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name Book ! :");
+        String nameBook = scanner.nextLine();
+
+         for (Book book : Book_list){
+
+             if (book.name_book.equalsIgnoreCase(nameBook)){
+
+                     System.out.println("Enter the Id Of student !  : ");
+                     String idStudent = scanner.nextLine();
+
+                     for (Student student : student_list){
+                         if (student.num_card.equalsIgnoreCase(idStudent)){
+                                book.student = student;
+                                student.books.add(book);
+
+                               System.out.println(" wa hasan --------");
+                         }
+                     }
+                 break;
+             }
+
+         }
+
+    }
+    public void showStudent(){
+        for (Student student : student_list) {
+            System.out.println("-----------------------");
+            System.out.print("ID Book : " + student.num_card + "\n");
+            System.out.println("Book name :  " + student.full_name);
+            System.out.println("Book description :  " + student.adr_name);
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
 
             if (student.books.isEmpty()){
                 System.out.println("He did not to reserve any book !");
