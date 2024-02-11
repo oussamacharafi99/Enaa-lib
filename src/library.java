@@ -50,7 +50,11 @@ public class library {
         System.out.println("Enter the Full Name of the Student :");
         newStudent.full_name = scanner.nextLine();
 
+<<<<<<< HEAD
         System.out.println("Enter the address of the Student :");
+=======
+        System.out.println("Enter the adresse of the book :");
+>>>>>>> cf78cdce97663a5327d00ca755baa1beb713a4d9
         newStudent.adr_name = scanner.nextLine();
 
 
