@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
 public class Book {
     public int Id_book;
     public String name_book;

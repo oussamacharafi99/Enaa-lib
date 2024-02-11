@@ -6,22 +6,39 @@ public class library {
     ArrayList<Student> student_list = new ArrayList<>();
     int i = 0;
     Scanner scanner = new Scanner(System.in);
+<<<<<<< HEAD
 
     public void addBook() {
         Book newBook = new Book();
 
         Scanner scanner = new Scanner(System.in);
 
+=======
+    public void addBook() {
+        Book newBook = new Book();
+<<<<<<< HEAD
+        Scanner scanner = new Scanner(System.in);
+=======
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
         newBook.Id_book = i;
 
         System.out.println("Enter the name of the book:");
         newBook.name_book = scanner.nextLine();
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
         for (Book book : Book_list) {
             while (newBook.name_book.equals(book.name_book)) {
                 System.out.println("Enter the name of the book:");
                 newBook.name_book = scanner.nextLine();
+<<<<<<< HEAD
 
 
             }
@@ -30,6 +47,16 @@ public class library {
         }
 
 
+=======
+<<<<<<< HEAD
+
+            }
+            break;
+=======
+            }
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
+        }
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
         System.out.println("Enter the description of the book:");
         newBook.des_book = scanner.nextLine();
 
@@ -39,7 +66,11 @@ public class library {
         System.out.println("Enter the Year of the book:");
         newBook.Years_book = scanner.nextInt();
 
+<<<<<<< HEAD
         while (newBook.Years_book < 1520 || newBook.Years_book > 2024) {
+=======
+        while (newBook.Years_book < 1520 || newBook.Years_book > 2024){
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
             System.out.println("Enter the correct Year of the book:");
             newBook.Years_book = scanner.nextInt();
         }
@@ -47,6 +78,32 @@ public class library {
         i++;
         System.out.println("Book added successfully!");
     }
+<<<<<<< HEAD
+=======
+    public void addStudent(){
+
+        Scanner scanner = new Scanner(System.in);
+        Student newStudent = new Student();
+
+        System.out.println("Enter the ID of the student :");
+        newStudent.num_card = scanner.nextLine();
+
+        System.out.println("Enter the Full Name of the Student :");
+        newStudent.full_name = scanner.nextLine();
+
+<<<<<<< HEAD
+        System.out.println("Enter the address of the Student :");
+=======
+        System.out.println("Enter the adresse of the book :");
+>>>>>>> cf78cdce97663a5327d00ca755baa1beb713a4d9
+        newStudent.adr_name = scanner.nextLine();
+
+
+        student_list.add(newStudent);
+
+        System.out.println("Student added successfully!");
+    }
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
     public void showBook(){
         for (Book book : Book_list) {
             System.out.print("ID Book : ");
@@ -59,6 +116,7 @@ public class library {
         }
 
     }
+<<<<<<< HEAD
     public void addStudent(){
 
         Scanner scanner = new Scanner(System.in);
@@ -170,6 +228,9 @@ public class library {
 
         }
     }
+=======
+<<<<<<< HEAD
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
     public void reserve() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name of the Book: ");
@@ -209,4 +270,128 @@ public class library {
             System.out.println("Book with name " + nameBook + " not found.");
         }
     }
+<<<<<<< HEAD
+=======
+    public void cancelReservation() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name of the Book to cancel reservation: ");
+        String nameBook = scanner.nextLine();
+
+        boolean foundBook = false;
+
+        for (Book book : Book_list) {
+            if (book.name_book.equalsIgnoreCase(nameBook)) {
+                foundBook = true;
+
+                if (book.student == null) {
+                    System.out.println("This book is not reserved by any student.");
+                } else {
+                    Student student = book.student;
+                    student.books.remove(book);
+                    book.student = null;
+                    System.out.println("Reservation canceled successfully.");
+                }
+                break;
+            }
+        }
+        if (!foundBook) {
+            System.out.println("Book with name " + nameBook + " not found.");
+        }
+    }
+
+    public void showStudent(){
+        for (Student student : student_list) {
+            System.out.println("-----------------------");
+            System.out.print("ID Student : " + student.num_card + "\n");
+            System.out.println("Student Full NAme name :  " + student.full_name);
+            System.out.println("Student Address :  " + student.adr_name);
+=======
+    public void reserve(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name Book ! :");
+        String nameBook = scanner.nextLine();
+
+         for (Book book : Book_list){
+
+             if (book.name_book.equalsIgnoreCase(nameBook)){
+
+                     System.out.println("Enter the Id Of student !  : ");
+                     String idStudent = scanner.nextLine();
+
+                     for (Student student : student_list){
+                         if (student.num_card.equalsIgnoreCase(idStudent)){
+                                book.student = student;
+                                student.books.add(book);
+
+                               System.out.println(" wa hasan --------");
+                         }
+                     }
+                 break;
+             }
+
+         }
+
+    }
+    public void showStudent(){
+        for (Student student : student_list) {
+            System.out.println("-----------------------");
+            System.out.print("ID Book : " + student.num_card + "\n");
+            System.out.println("Book name :  " + student.full_name);
+            System.out.println("Book description :  " + student.adr_name);
+>>>>>>> 7df99619651cf44c1939200f6dde8b3f4d416558
+
+            if (student.books.isEmpty()){
+                System.out.println("He did not to reserve any book !");
+            }
+            else {
+                student.books.forEach( book -> System.out.println("The book name " + book.name_book));
+            }
+            System.out.println("-----------------------");
+        }
+    }
+    public void remoove(){
+//        System.out.println("i'm suppremir  !\n");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the Id book !");
+        int sear = scanner.nextInt();
+        boolean found = false;
+
+        for ( int i = 0; i < Book_list.size(); i++) {
+            if (sear - 1 == Book_list.get(i).Id_book){
+                found = true;
+                Book_list.remove(i);
+                System.out.println("this Book is removed !");
+            }
+        }
+        if (!found){
+            System.out.println("The Book Id : " + sear + " unavailable !");
+        }
+
+    }
+    public void search() {
+       if (Book_list.isEmpty()){
+           System.out.println("Enaa-lib is vide !");
+       }
+
+       else {
+
+           System.out.print("Enter Name Book For searching !: ");
+           String NAME = scanner.nextLine();
+           for (Book book : Book_list) {
+               if (book.name_book.equalsIgnoreCase(NAME)) {
+                   System.out.print("ID Book : ");
+                   System.out.println(book.Id_book + 1);
+                   System.out.println("Book name :  " + book.name_book);
+                   System.out.println("Book description :  " + book.des_book);
+                   System.out.println("the author name is :" + book.author);
+                   System.out.println("Book Years :  " + book.Years_book);
+                   System.out.println("-----------------------");
+               }
+           }
+
+       }
+    }
+
+
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
 }

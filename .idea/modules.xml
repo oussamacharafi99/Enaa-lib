@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Enna_lib.iml" filepath="$PROJECT_DIR$/Enna_lib.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/pro.iml" filepath="$PROJECT_DIR$/pro.iml" />
+>>>>>>> 93b4cecfcdd6a95e841da4cb7af53d97737719aa
     </modules>
   </component>
 </project>
